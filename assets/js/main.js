@@ -1,161 +1,138 @@
 /*
-	Overflow by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Transitive by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
 (function($) {
 
-	var settings = {
-
-		// Full screen header?
-			fullScreenHeader: true,
-
-		// Parallax background effect?
-			parallax: true,
-
-		// Parallax factor (lower = more intense, higher = less intense).
-			parallaxFactor: 10
-
-	};
-
 	skel.breakpoints({
-		wide: '(max-width: 1680px)',
-		normal: '(max-width: 1080px)',
-		narrow: '(max-width: 840px)',
-		mobile: '(max-width: 736px)'
+		xlarge:	'(max-width: 1680px)',
+		large:	'(max-width: 1280px)',
+		medium:	'(max-width: 980px)',
+		small:	'(max-width: 736px)',
+		xsmall:	'(max-width: 480px)'
 	});
 
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body');
-
-		if (skel.vars.touch) {
-
-			settings.parallax = false;
-			$body.addClass('is-scroll');
-
-		}
+			$body = $('body'),
+			$header = $('#header'),
+			$banner = $('#banner');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
 			$window.on('load', function() {
-				$body.removeClass('is-loading');
+				window.setTimeout(function() {
+					$body.removeClass('is-loading');
+				}, 100);
 			});
 
-		// CSS polyfills (IE<9).
-			if (skel.vars.IEVersion < 9)
-				$(':last-child').addClass('last-child');
+		// Prioritize "important" elements on medium.
+			skel.on('+medium -medium', function() {
+				$.prioritize(
+					'.important\\28 medium\\29',
+					skel.breakpoint('medium').active
+				);
+			});
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
-		// Prioritize "important" elements on mobile.
-			skel.on('+mobile -mobile', function() {
-				$.prioritize(
-					'.important\\28 mobile\\29',
-					skel.breakpoint('mobile').active
-				);
-			});
+		// Header.
+			if (skel.vars.IEVersion < 9)
+				$header.removeClass('alt');
 
-		// Scrolly links.
-			$('.scrolly-middle').scrolly({
-				speed: 1000,
-				anchor: 'middle'
-			});
+			if ($banner.length > 0
+			&&	$header.hasClass('alt')) {
 
-			$('.scrolly').scrolly({
-				speed: 1000,
-				offset: function() { return (skel.breakpoint('mobile').active ? 70 : 190); }
-			});
+				$window.on('resize', function() { $window.trigger('scroll'); });
 
-		// Full screen header.
-			if (settings.fullScreenHeader) {
-
-				var $header = $('#header');
-
-				if ($header.length > 0) {
-
-					var $header_header = $header.find('header');
-
-					$window
-						.on('resize.overflow_fsh', function() {
-
-							if (skel.breakpoint('mobile').active)
-								$header.css('padding', '');
-							else {
-
-								var p = Math.max(192, ($window.height() - $header_header.outerHeight()) / 2);
-								$header.css('padding', p + 'px 0 ' + p + 'px 0');
-
-							}
-
-						})
-						.trigger('resize.overflow_fsh');
-
-					$window.load(function() {
-						$window.trigger('resize.overflow_fsh');
-					});
-
-				}
+				$banner.scrollex({
+					bottom:		$header.outerHeight(),
+					terminate:	function() { $header.removeClass('alt'); },
+					enter:		function() { $header.addClass('alt'); },
+					leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
+				});
 
 			}
 
-		// Parallax background.
+		// Banner.
 
-			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
-				if (skel.vars.browser == 'ie'
-				||	skel.vars.mobile)
-					settings.parallax = false;
+			if ($banner.length > 0) {
 
-			if (settings.parallax) {
+				// IE fix.
+					if (skel.vars.IEVersion < 12) {
 
-				var $dummy = $(), $bg;
+						$window.on('resize', function() {
 
-				$window
-					.on('scroll.overflow_parallax', function() {
+							var wh = $window.height() * 0.60,
+								bh = $banner.height();
 
-						// Adjust background position.
-							$bg.css('background-position', 'center ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
+							$banner.css('height', 'auto');
 
-					})
-					.on('resize.overflow_parallax', function() {
+							window.setTimeout(function() {
 
-						// If we're in a situation where we need to temporarily disable parallax, do so.
-							if (!skel.breakpoint('wide').active
-							||	skel.breakpoint('narrow').active) {
+								if (bh < wh)
+									$banner.css('height', wh + 'px');
 
-								$body.css('background-position', '');
-								$bg = $dummy;
+							}, 0);
 
-							}
+						});
 
-						// Otherwise, continue as normal.
-							else
-								$bg = $body;
+						$window.on('load', function() {
+							$window.triggerHandler('resize');
+						});
 
-						// Trigger scroll handler.
-							$window.triggerHandler('scroll.overflow_parallax');
+					}
 
-					})
-					.trigger('resize.overflow_parallax');
+				// Video check.
+					var video = $banner.data('video');
+
+					if (video)
+						$window.on('load.banner', function() {
+
+							// Disable banner load event (so it doesn't fire again).
+								$window.off('load.banner');
+
+							// Append video if supported.
+								if (!skel.vars.mobile
+								&&	!skel.breakpoint('large').active
+								&&	skel.vars.IEVersion > 9)
+									$banner.append('<video autoplay loop><source src="' + video + '.mp4" type="video/mp4" /><source src="' + video + '.webm" type="video/webm" /></video>');
+
+						});
+
+				// More button.
+					$banner.find('.more')
+						.addClass('scrolly');
 
 			}
 
-		// Poptrox.
-			$('.gallery').poptrox({
-				useBodyOverflow: false,
-				usePopupEasyClose: false,
-				overlayColor: '#0a1919',
-				overlayOpacity: (skel.vars.IEVersion < 9 ? 0 : 0.75),
-				usePopupDefaultStyling: false,
-				usePopupCaption: true,
-				popupLoaderText: '',
-				windowMargin: 10,
-				usePopupNav: true
-			});
+		// Scrolly.
+			if ( $( ".scrolly" ).length ) {
+
+				var $height = $('#header').height() * 0.95;
+
+				$('.scrolly').scrolly({
+					offset: $height
+				});
+			}
+
+		// Menu.
+			$('#menu')
+				.append('<a href="#menu" class="close"></a>')
+				.appendTo($body)
+				.panel({
+					delay: 500,
+					hideOnClick: true,
+					hideOnSwipe: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'right'
+				});
 
 	});
 

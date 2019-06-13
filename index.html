@@ -1,271 +1,194 @@
 <!DOCTYPE HTML>
-<!--
-	Overflow by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
-		<title>Mark Volfson's website</title>
+		<title>Mark Volfson</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
 
 		<!-- Header -->
-			<section id="header">
-				<header>
-					<h1>Mark Volfson</h1>
-					<p>software developer</p>
-				</header>
-				<footer>
-					<a href="#banner" class="button style2 scrolly-middle">Learn More</a>
-				</footer>
-			</section>
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">Mark Volfson<span></span></a></div>
+				<a href="#menu" class="toggle"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#one">Experience</a></li>
+					<li><a href="#footer">Contact Me</a></li>
+				</ul>
+			</nav>
 
 		<!-- Banner -->
-			<section id="banner">
-				<header>
-					<h2>I am Mark Volfson</h2>
-				</header>
-				<p>I am a Computer Science student at Ryerson University.<br />
-				</p>
-				<footer>
-					<a href="#first" class="button style2 scrolly">Continue</a>
-				</footer>
+	
+			<section id="banner" data-video="images/banner.jpg">
+				<div class="inner">
+					<h1>Mark Volfson</h1>
+					<p>Fourth-Year Computer Science student<br />
+						with a great passion for technology.</p>
+					<a href="#one" class="button special scrolly">Get Started</a>
+				</div>
 			</section>
 
-		<!-- Feature 1 -->
-			<article id="first" class="container box style1 right">
-				<a  class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-				
+		<!-- One -->
+			<section id="one" class="wrapper style2">
 				<div class="inner">
-					
-					<header>
-						<h2>Skills</h2>
-					</header>
-					<p> 
-						<li>Java Programing</li>
-    					<li>Software testing</li>
-						<li>Time management</li>
-						<br />
-					</p>
-				</div>
-			</article>
-			
-		<!-- Feature 2 -->
-			<article class="container box style1 left">
-				<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-				<div class="inner">
-					<header>
-						<h2>Objectives</h2>
-					</header>
-					<p>I will complete any of your computer tasks in a timely manner with your full control over the design and the fuctionality.</p>
-				</div>
-			</article>
-
-		
-		<!-- Contact -->
-			<article class="container box style3">
-				<header>
-					<h2>Let's get in touch!</h2>
-					<p>For personal and business inquries, please fill out the form bellow.</p>
-				</header>
-				<form method="post" action="https://formspree.io/mark.volfson@gmail.com">
-					<div class="row 50%">
-						<div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name" /></div>
-						<div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email" /></div>
-						<div class="12u$">
-							<textarea name="message" placeholder="Message"></textarea>
+					<div>
+						<div class="box">
+							<div class="image fit">
+								<img src="images/pic01.jpg" alt="" />
+							</div>
+							<div class="content">
+								<header class="align-center">
+									<h2>Experience</h2>
+									<p>Relevant experience</p>
+								</header>
+								<hr />
+								<p><b>&bull; TD Bank -> May 2018 - Current</b><br>As an <b>Information Security Analyst</b> part of the <b>Privileged Access Management</b>, I have been exposed to numerous enterprise security technologies and techiques. From managing SUDO access on <b>UNIX</b> serves, to <b>developing</b> new form intakes for the team, during my extended co-op term at <b>TD Bank</b> I have understood the importance of <b>Cyber Security</b> in today's complex world.<br>I have been responsible for the <b>management</b> and the <b>enhancement</b> of the banks processes in regards to privileges access, which in turn I have ended up modifying and/or replacing 3 of them due to their incompleteness. I have exceeded management <b>expectations</b> of my deliverables and had the opportunity to stay part-time on the team during school.<br><br><b>&bull; Telus -> February 2017 - November 2018</b><br>As a <b>store representative</b> at <b>Telus</b>, I have been responsible for finding unique customers solutions while <b>maintaining</b> a fast-paced store. Due to my exceptional understanding of the internal systems, I have become the managers <b>first point of contact</b> in regards to any store issue. I have maintained the store inventory, sales metrics, and reports. At the same time, I was able to <b>understand</b> the companies focus, which in turn allowed me to become the <b>top sales representative</b> of the store for 2017 and 2018.<br><br><b>Additional work experience can be found on my <a href="https://www.linkedin.com/in/mvolfson/" target="_blank">Linkedin.</a></b></p>
+							</div>
 						</div>
-						<div class="12u$">
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style3">
+				<div class="inner">
+					<div id="flexgrid">
+						<div>
+							<header>
+								<h3>Peer-to-Peer Networking</h3>
+							</header>
+							<p>Peer-to-Peer application implemented in JAVA to transfer files between peers using TCP with the help of a Distributed Hash Table server managed through UDP</p>
 							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
+								<li><a href="https://mark0110.github.io/P2P-Networking/" class="button alt" target="_blank">Learn More</a></li>
+							</ul>
+						</div>
+						<div>
+							<header>
+								<h3>Image Panorama</h3>
+							</header>
+							<p>Panorama Image creation application implemented in Python using the SIFT feature detector and descriptor. By finding the affine transformation of one image, stitches two images together to create a panoramic scene</p>
+							<ul class="actions">
+								<li><a href="https://mark0110.github.io/Image-Stitching/" class="button alt" target="_blank">Learn More</a></li>
+							</ul>
+						</div>
+						<div>
+							<header>
+								<h3>More Projects</h3>
+							</header>
+							<p>All of my other projects can be found on my GitHub.</p>
+							<ul class="actions">
+								<li><a href="https://github.com/mark0110?tab=repositories" class="button alt" target="_blank">Learn More</a></li>
 							</ul>
 						</div>
 					</div>
-				</form>
-			</article>
+				</div>
+			</section>
 
-		<!-- Generic -->
-		<!--
-			<article class="container box style3">
-				<header>
-					<h2>Generic Box</h2>
-					<p>Just a generic box. Nothing to see here.</p>
-				</header>
-				<section>
-					<header>
-						<h3>Paragraph</h3>
-						<p>This is a subtitle</p>
-					</header>
-					<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-					habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-					leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-					amet risus elit.</p>
-				</section>
-				<section>
-					<header>
-						<h3>Blockquote</h3>
-					</header>
-					<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-					tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-				</section>
-				<section>
-					<header>
-						<h3>Divider</h3>
-					</header>
-					<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
-					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-					posuere cubilia.</p>
-					<hr />
-					<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-					ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-					facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-					tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-					posuere cubilia.</p>
-				</section>
-				<section>
-					<header>
-						<h3>Unordered List</h3>
-					</header>
-					<ul class="default">
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-					</ul>
-				</section>
-				<section>
-					<header>
-						<h3>Ordered List</h3>
-					</header>
-					<ol class="default">
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-					</ol>
-				</section>
-				<section>
-					<header>
-						<h3>Table</h3>
-					</header>
-					<div class="table-wrapper">
-						<table class="default">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>45815</td>
-									<td>Something</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>24524</td>
-									<td>Nothing</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>19.99</td>
-								</tr>
-								<tr>
-									<td>45815</td>
-									<td>Something</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>29.99</td>
-								</tr>
-								<tr>
-									<td>24524</td>
-									<td>Nothing</td>
-									<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
-									<td>19.99</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="3"></td>
-									<td>100.00</td>
-								</tr>
-							</tfoot>
-						</table>
+		<!-- Three -->
+			<section id="three" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="images/pic02.jpg" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<h2>Programing</h2>
+										<p></p>
+									</header style="align-center">
+									<hr />
+									<p style="text-align:center"><b>Java<br>Python<br>Dart<br>Matlab<br>C / C++<br>Swift<br>Google Flutter</b></p>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="images/pic03.jpg" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<h2>Software / Skills</h2>
+										<p></p>
+									</header>
+									<hr />
+									<p style="text-align:center"><b>Office 365: Work, Excel, Sharepoint<br>Active Directory &rarr; Active Roles Server<br>Service Now<br>Jira / Confluence &rarr; ConfiForms<br>Linux / UNIX<br>CyberArk &rarr; PSMP / AIM<br>Agile Project Management<br></b></p>
+								</div>
+							</div>
+							
+						</div>
+						
 					</div>
-				</section>
-				<section>
-					<header>
-						<h3>Form</h3>
-					</header>
-					<form method="post" action="#">
-						<div class="row">
-							<div class="6u">
-								<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
-							</div>
-							<div class="6u">
-								<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<select name="department" id="department">
-									<option value="">Choose a department</option>
-									<option value="1">Manufacturing</option>
-									<option value="2">Administration</option>
-									<option value="3">Support</option>
-								</select>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<textarea name="message" id="message" placeholder="Enter your message"></textarea>
-							</div>
-						</div>
-						<div class="row">
-							<div class="12u">
-								<ul class="actions">
-									<li><input type="submit" value="Submit" /></li>
-									<li><input type="reset" class="style3" value="Clear Form" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</section>
-			</article>
-		-->
+					<ul class="actions align-center">
+						<li><a href="https://drive.google.com/file/d/1PieQEjzvtDGIRF97Yan4kfU8ON4YE7m2/view?usp=sharing" class="button special" target="_blank">Resume</a></li>
+					</ul>
+				</div>
+			</section>
 
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="https://www.facebook.com/mark.volfson" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="https://ca.linkedin.com/in/mvolfson" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-			</ul>
-			<div class="copyright">
-				<ul class="menu">
-					<li>&copy; Mark Volfson. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</section>
+		<!-- Four -->
+			<section id="four" class="wrapper style3">
+				<div class="inner">
+
+					<header class="align-center">
+						<h2>Entrepreneur</h2>
+						<p>During school and work, I have opened a business on the side to further develop my interpersonal skills. I provide technical support to consumer and business customers. This business venture allowed me to develop my organizational and people skills. With so many things going on, I understood how to properly structure my life to success in all tasks I take upon.</p>
+					</header>
+
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper">
+				<div class="inner">
+					<section>
+						<div class="box">
+							<div class="content">
+								<h2 class="align-center">Let's Get in Touch</h2>
+								<hr />
+								<form method="post" action="https://formspree.io/mark.volfson@gmail.com"> 
+									<div class="field half first">
+										<label for="name">Name</label>
+										<input name="name" id="name" type="text" placeholder="Name">
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input name="email" id="email" type="email" placeholder="Email">
+									</div>
+
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+									</div>
+									<ul class="actions align-center">
+										<li><input value="Send Message" class="button special" type="submit"></li>
+									</ul>
+								</form>
+							</div>
+						</div>
+					</section>
+					<div class="copyright">
+						&copy; <a href="https://www.linkedin.com/in/mvolfson/" target="_blank"> Mark Volfson</a>.
+					</div>
+				</div>
+			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
 	</body>
